@@ -1,0 +1,220 @@
+<!-- login.html ULTRA PRO VERSION -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Smart Health Tracker X</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(rgba(0,50,100,.55),rgba(0,120,200,.55)),
+url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+overflow:hidden;
+position:relative;
+}
+
+/* Floating Glow Circles */
+.circle{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+animation:float 6s ease-in-out infinite;
+}
+
+.c1{width:220px;height:220px;top:40px;left:60px;}
+.c2{width:160px;height:160px;bottom:50px;right:80px;animation-delay:2s;}
+.c3{width:100px;height:100px;top:140px;right:250px;animation-delay:1s;}
+
+/* Login Card */
+.login-box{
+width:420px;
+padding:42px;
+background:rgba(255,255,255,0.14);
+border:1px solid rgba(255,255,255,0.22);
+backdrop-filter:blur(18px);
+border-radius:28px;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+text-align:center;
+color:white;
+z-index:5;
+animation:fadeUp 1s ease;
+}
+
+.logo{
+font-size:34px;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.sub{
+font-size:14px;
+opacity:0.95;
+margin-bottom:28px;
+}
+
+.input-box{
+position:relative;
+margin-bottom:18px;
+}
+
+.input-box i{
+position:absolute;
+left:16px;
+top:16px;
+font-size:15px;
+}
+
+input{
+width:100%;
+padding:14px 14px 14px 46px;
+border:none;
+outline:none;
+border-radius:14px;
+background:rgba(255,255,255,0.16);
+color:white;
+font-size:15px;
+}
+
+input::placeholder{
+color:#eef7ff;
+}
+
+.options{
+display:flex;
+justify-content:space-between;
+font-size:13px;
+margin:8px 0 18px;
+opacity:0.95;
+}
+
+.options a{
+color:white;
+text-decoration:none;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:35px;
+font-size:16px;
+font-weight:700;
+background:white;
+color:#0077cc;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 24px rgba(0,0,0,0.18);
+}
+
+.demo{
+margin-top:18px;
+font-size:13px;
+opacity:0.95;
+}
+
+.back{
+margin-top:14px;
+font-size:14px;
+}
+
+.back a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+/* Animations */
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:500px){
+.login-box{
+width:92%;
+padding:30px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<div class="login-box">
+
+<div class="logo">Smart Health X</div>
+<div class="sub">Secure login to access your health dashboard</div>
+
+<div class="input-box">
+<i class="fas fa-envelope"></i>
+<input type="email" id="email" placeholder="Enter Email">
+</div>
+
+<div class="input-box">
+<i class="fas fa-lock"></i>
+<input type="password" id="password" placeholder="Enter Password">
+</div>
+
+<div class="options">
+<span>Remember me</span>
+<a href="#">Forgot Password?</a>
+</div>
+
+<button onclick="login()">Login Now</button>
+
+<div class="demo">
+Demo: admin@gmail.com / 1234
+</div>
+
+<div class="back">
+<a href="index.html">← Back to Home</a>
+</div>
+
+</div>
+
+<script>
+function login(){
+let email=document.getElementById("email").value.trim();
+let password=document.getElementById("password").value.trim();
+
+if(email==="admin@gmail.com" && password==="1234"){
+alert("Welcome Back!");
+window.location="dashboard.html";
+}else{
+alert("Invalid Email or Password");
+}
+}
+</script>
+
+</body>
+</html>
